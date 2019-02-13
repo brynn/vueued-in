@@ -6,32 +6,48 @@
       </md-card-header>
       <md-card-content>
         <md-list v-if="categories.length">
-          <md-list-item v-for="categoryObj in categories" :key="categoryObj.category.id">
+          <md-list-item
+            v-for="categoryObj in categories"
+            :key="categoryObj.category.id"
+            v-bind:class="[
+              categoryObj.category.isDefault
+                ? categoryObj.category.slug
+                : 'custom',
+            ]"
+          >
             <md-checkbox
-              v-bind:class="[categoryObj.category.isDefault ? categoryObj.category.slug : 'custom']"
               v-model="selectedCategoryIds"
               v-bind:value="categoryObj.category.id"
               @change="handleCheckCategory(categoryObj.category.id)"
             >
-              <span class="md-list-item-text">{{categoryObj.category.name}}</span>
+              <span class="md-list-item-text">
+                {{ categoryObj.category.name }}
+              </span>
             </md-checkbox>
 
             <div @click.stop="handleRemoveCategory(categoryObj.category)">
               <md-button
                 class="md-icon-button md-list-action category-icons"
-                v-bind:class="[categoryObj.category.isDefault ? 'category-delete-icon-on-hover' : 'custom']"
+                v-bind:class="[
+                  categoryObj.category.isDefault
+                    ? 'category-delete-icon-on-hover'
+                    : 'custom',
+                ]"
                 @mouseover.native="toggleDeleteIcon(categoryObj.category)"
                 @mouseout.native="toggleDeleteIcon(categoryObj.category)"
               >
                 <md-icon class="icon-delete md-size-2x">
-                  <span v-if="!categoryObj.showDeleteIcon">{{categoryObj.category.icon}}</span>
+                  <span v-if="!categoryObj.showDeleteIcon">
+                    {{ categoryObj.category.icon }}
+                  </span>
                   <span v-else>cancel</span>
                 </md-icon>
                 <md-tooltip
                   v-show="!categoryObj.category.isDefault"
                   md-direction="right"
                   md-delay="300"
-                >Delete Category</md-tooltip>
+                  >Delete Category</md-tooltip
+                >
               </md-button>
             </div>
           </md-list-item>
@@ -44,7 +60,7 @@
   </div>
 </template>
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapState } from 'vuex';
 
 export default {
   name: 'CategoryFilters',
@@ -63,6 +79,8 @@ export default {
           return selectedCategories.length > 0
             ? selectedCategories.map(categoryObj => categoryObj.category.id)
             : [];
+        } else {
+          return [];
         }
       },
     },
@@ -107,6 +125,27 @@ export default {
 #category-filters {
   .md-card {
     background-color: $card-bg;
+  }
+  .md-list-item-container {
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .md-icon-button {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+  }
+  .md-icon.md-size-2x {
+    font-size: 30px !important;
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+  }
+  .category-icons {
+    opacity: 0.6;
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 </style>

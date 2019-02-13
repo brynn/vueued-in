@@ -65,10 +65,6 @@ const itemIndex = itemId => {
   return state.all.map(itemObj => itemObj.item.id).indexOf(itemId);
 };
 
-const itemsForCategoryId = categoryId => {
-  return state.all.filter(itemObj => itemObj.item.categoryId === categoryId);
-};
-
 // MUTATIONS
 // naming convention: set, clear, push
 const mutations = {
