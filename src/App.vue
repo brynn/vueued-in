@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <Nav />
+    <Nav/>
     <!-- <div id="nav">
       <router-link to="/">Home</router-link>|
       <router-link to="/about">About</router-link>
     </div>-->
-    <router-view />
+    <router-view/>
   </div>
 </template>
 
@@ -34,9 +34,6 @@ body {
 a {
   text-decoration: none;
   color: #fff;
-  &.router-link-exact-active {
-    text-decoration: underline;
-  }
 }
 button {
   color: $default-text;

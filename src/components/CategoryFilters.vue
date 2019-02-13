@@ -20,9 +20,7 @@
               v-bind:value="categoryObj.category.id"
               @change="handleCheckCategory(categoryObj.category.id)"
             >
-              <span class="md-list-item-text">
-                {{ categoryObj.category.name }}
-              </span>
+              <span class="md-list-item-text">{{ categoryObj.category.name }}</span>
             </md-checkbox>
 
             <div @click.stop="handleRemoveCategory(categoryObj.category)">
@@ -37,17 +35,14 @@
                 @mouseout.native="toggleDeleteIcon(categoryObj.category)"
               >
                 <md-icon class="icon-delete md-size-2x">
-                  <span v-if="!categoryObj.showDeleteIcon">
-                    {{ categoryObj.category.icon }}
-                  </span>
+                  <span v-if="!categoryObj.showDeleteIcon">{{ categoryObj.category.icon }}</span>
                   <span v-else>cancel</span>
                 </md-icon>
                 <md-tooltip
                   v-show="!categoryObj.category.isDefault"
                   md-direction="right"
                   md-delay="300"
-                  >Delete Category</md-tooltip
-                >
+                >Delete Category</md-tooltip>
               </md-button>
             </div>
           </md-list-item>
@@ -83,6 +78,7 @@ export default {
           return [];
         }
       },
+      set: function() {},
     },
   },
   methods: {
@@ -125,6 +121,9 @@ export default {
 #category-filters {
   .md-card {
     background-color: $card-bg;
+    .md-card-header {
+      padding: 32px;
+    }
   }
   .md-list-item-container {
     font-weight: 500;
