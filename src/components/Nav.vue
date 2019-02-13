@@ -1,5 +1,5 @@
 <template>
-  <nav class="md-layout md-gutter md-alignment-center-space-between">
+  <nav class="md-layout md-gutter md-alignment-bottom-space-between">
     <div class="md-layout-item md-size-30">
       <h1 id="logo" class="md-display-2">
         <router-link to="/">
@@ -49,7 +49,7 @@ export default {
 }
 
 #tagline {
-  color: #97a7b0;
+  color: $default-text;
   em {
     color: #fff;
   }

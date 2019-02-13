@@ -23,14 +23,13 @@ export default {
 <style lang="scss">
 body {
   background-color: #051620;
-  color: #97a7b0;
+  color: $default-text;
 }
 #app {
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 60px;
-  color: #fff;
 }
 a {
   text-decoration: none;
@@ -40,7 +39,7 @@ a {
   }
 }
 button {
-  color: #97a7b0;
+  color: $default-text;
 }
 ul {
   list-style-type: none;
