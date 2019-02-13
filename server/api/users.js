@@ -36,7 +36,7 @@ const resourceBelongsToUser = resourceType => async (req, res, next) => {
 ////////////////////////////
 
 // GET a user: /api/users/:userId
-router.get('/:userId', sameUser, async (req, res, next) => {
+router.get('/:userId', async (req, res, next) => {
   try {
     const userId = Number(req.params.userId);
     const user = await User.findByPk(userId, {
