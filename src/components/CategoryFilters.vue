@@ -44,7 +44,7 @@
   </div>
 </template>
 <script>
-import { mapState, mapActions, mapGetters } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 
 export default {
   name: 'CategoryFilters',
@@ -97,7 +97,6 @@ export default {
   },
   created() {
     if (this.user.id) {
-      this.$store.dispatch('items/fetchItems', this.user.id);
       this.$store.dispatch('categories/fetchCategories', this.user.id);
     }
   },
