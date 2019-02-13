@@ -9,7 +9,13 @@ const state = {
 };
 
 // getters
-const getters = {};
+const getters = {
+  getSelectedCategoryIds: state => {
+    return state.all
+      .filter(categoryObj => categoryObj.isSelected)
+      .map(categoryObj => categoryObj.category.id);
+  },
+};
 
 // actions naming convention: fetch, add, remove
 const actions = {

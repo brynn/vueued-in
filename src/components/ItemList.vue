@@ -58,6 +58,9 @@
 import { mapState, mapGetters } from 'vuex';
 export default {
   name: 'ItemList',
+  data: () => ({
+    hideCompleted: false,
+  }),
   computed: {
     ...mapState({
       user: state => state.users.loggedInUser,
@@ -65,6 +68,7 @@ export default {
     }),
     ...mapGetters({
       visibleItems: 'items/getVisibleItems',
+      selectedCategoryIds: 'categories/getSelectedCategoryIds',
     }),
     // will be an array of ids e.g. [2, 6, 11]
     completedItemIds: function() {

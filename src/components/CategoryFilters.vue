@@ -55,7 +55,7 @@
   </div>
 </template>
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 
 export default {
   name: 'CategoryFilters',
@@ -64,22 +64,10 @@ export default {
       user: state => state.users.loggedInUser,
       categories: state => state.categories.all,
     }),
-    // will be an array of ids e.g. [2, 6, 11]
-    selectedCategoryIds: {
-      get: function() {
-        if (this.categories.length) {
-          const selectedCategories = this.categories.filter(
-            categoryObj => categoryObj.isSelected
-          );
-          return selectedCategories.length > 0
-            ? selectedCategories.map(categoryObj => categoryObj.category.id)
-            : [];
-        } else {
-          return [];
-        }
-      },
-      set: function() {},
-    },
+    ...mapGetters({
+      visibleItems: 'items/getVisibleItems',
+      selectedCategoryIds: 'categories/getSelectedCategoryIds',
+    }),
   },
   methods: {
     handleCheckCategory(categoryId) {
