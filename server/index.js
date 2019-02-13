@@ -1,5 +1,6 @@
-/* eslint-disable */
-
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-console */
 const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
