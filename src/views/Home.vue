@@ -1,17 +1,23 @@
 <template>
   <div class="home">
-    <AllItems msg="Items will appear here" />
+    <CategoryFilters/>
+    <ItemList/>
+    <AddItemForm/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import AllItems from '@/components/AllItems.vue';
+import CategoryFilters from '@/components/CategoryFilters.vue';
+import ItemList from '@/components/ItemList.vue';
+import AddItemForm from '@/components/AddItemForm.vue';
 
 export default {
   name: 'home',
   components: {
-    AllItems,
+    CategoryFilters,
+    ItemList,
+    AddItemForm,
   },
 };
 </script>

@@ -1,21 +1,29 @@
 <template>
   <div id="app">
-    <h1 id="logo">
-      <router-link to="/items">
-        <span class="checkmark">✓</span>ueued In
-      </router-link>
-    </h1>
-    <div id="nav">
+    <Nav/>
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link>|
       <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    </div>-->
+    <router-view/>
   </div>
 </template>
+
+<script>
+import Nav from '@/components/Nav.vue';
+
+export default {
+  name: 'App',
+  components: {
+    Nav,
+  },
+};
+</script>
 
 <style lang="scss">
 body {
   background-color: #051620;
+  color: #97a7b0;
 }
 #app {
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
@@ -31,24 +39,11 @@ a {
     text-decoration: underline;
   }
 }
-#logo {
-  font-family: 'Roboto Mono', monospace;
-  font-weight: 500;
-  a {
-    transition: 0.3s;
-    .checkmark {
-      font-size: 60px;
-      color: rgb(0, 121, 191);
-      transition: 0.5s;
-    }
-  }
-  a:hover {
-    color: rgb(151, 167, 176);
-    .checkmark {
-      color: #fff;
-    }
-  }
+button {
+  color: #97a7b0;
 }
-#nav {
+ul {
+  list-style-type: none;
+  padding: 0;
 }
 </style>
