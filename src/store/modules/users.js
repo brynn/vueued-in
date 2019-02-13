@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import users from '../../api/users';
 
 // initial state
