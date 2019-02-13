@@ -1,29 +1,54 @@
 <template>
   <div id="app">
+    <h1 id="logo">
+      <router-link to="/items">
+        <span class="checkmark">✓</span>ueued In
+      </router-link>
+    </h1>
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Home</router-link>|
       <router-link to="/about">About</router-link>
     </div>
-    <router-view />
+    <router-view/>
   </div>
 </template>
 
 <style lang="scss">
+body {
+  background-color: #051620;
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  padding: 60px;
+  color: #fff;
 }
-#nav {
-  padding: 30px;
+a {
+  text-decoration: none;
+  color: #fff;
+  &.router-link-exact-active {
+    text-decoration: underline;
+  }
+}
+#logo {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 500;
   a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+    transition: 0.3s;
+    .checkmark {
+      font-size: 60px;
+      color: rgb(0, 121, 191);
+      transition: 0.5s;
     }
   }
+  a:hover {
+    color: rgb(151, 167, 176);
+    .checkmark {
+      color: #fff;
+    }
+  }
+}
+#nav {
 }
 </style>
