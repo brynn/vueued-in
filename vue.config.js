@@ -6,8 +6,10 @@ module.exports = {
         ws: true,
         changeOrigin: true,
       },
-      '^/foo': {
-        target: '<other_url>',
+      '^/auth': {
+        target: 'ttp://localhost:8081',
+        ws: true,
+        changeOrigin: true,
       },
     },
   },
