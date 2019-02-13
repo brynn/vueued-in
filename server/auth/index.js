@@ -2,6 +2,10 @@ const router = require('express').Router();
 const { User } = require('../db/models');
 module.exports = router;
 
+// TODO
+// set up a frontend route that catches google oauth requests
+// and redirects them to be handled by the backend only
+
 router.post('/login', async (req, res, next) => {
   try {
     const user = await User.findOne({ where: { email: req.body.email } });

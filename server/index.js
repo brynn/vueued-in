@@ -80,13 +80,9 @@ const createApp = () => {
   app.use(passport.initialize());
   app.use(passport.session());
 
-  // TODO
-  // set up a route that catches google oauth requests
-  // and redirects them to be handled by the backend only
-
   // api and auth routes
   app.use('/api', require('./api'));
-  // app.use('/auth', require('./auth'));
+  app.use('/auth', require('./auth'));
 
   // static file-serving middleware
   app.use(express.static(path.join(__dirname, '..', 'dist')));
