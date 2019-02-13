@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import axios from 'axios';
 
 const PORT = process.env.PORT || 8080;
@@ -7,7 +8,7 @@ const baseURL =
     : `http://localhost:${PORT}`;
 
 const client = axios.create({
-  // this will be proxied to the backend server at 8081!
+  // this will be proxied to the backend server at 8081
   baseURL,
   json: true,
 });
