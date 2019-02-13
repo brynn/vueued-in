@@ -63,11 +63,6 @@ User.prototype.correctPassword = function(candidatePwd) {
   return User.encryptPassword(candidatePwd, this.salt()) === this.password();
 };
 
-// TODO: this method might not be needed
-User.prototype.getItemsForCategoryId = async function(categoryId) {
-  const items = await Item.findAll({ where: { categoryId } });
-  return items;
-};
 /**
  * classMethods
  */
