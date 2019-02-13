@@ -24,6 +24,12 @@
 <script>
 export default {
   name: 'Nav',
+  methods: {
+    handleLogOut() {
+      this.$store.dispatch('users/logout');
+      this.$router.push('/');
+    },
+  },
 };
 </script>
 
