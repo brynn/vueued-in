@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <AllItems msg="Items will appear here"/>
+    <AllItems msg="Items will appear here" />
   </div>
 </template>
 
