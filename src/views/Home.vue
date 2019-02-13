@@ -1,9 +1,9 @@
 <template>
   <div class="home md-layout md-gutter">
-    <CategoryFilters class="md-layout-item md-size-30" />
+    <CategoryFilters class="md-layout-item md-size-30"/>
     <div class="md-layout-item md-size-70">
-      <ItemList />
-      <AddItemForm />
+      <ItemList/>
+      <AddItemForm/>
     </div>
   </div>
 </template>
@@ -21,6 +21,12 @@ export default {
     ItemList,
     AddItemForm,
   },
+  created() {
+    this.$store.dispatch('users/login', {
+      email: 'brynn.shepherd@gmail.com',
+      password: '123',
+    });
+  },
 };
 </script>
 
@@ -37,6 +43,9 @@ export default {
 }
 .books {
   color: $books;
+  a {
+    color: $books;
+  }
   .md-checkbox {
     &.md-checked {
       .md-checkbox-container {
@@ -53,6 +62,9 @@ export default {
 }
 .movies {
   color: $movies;
+  a {
+    color: $movies;
+  }
   .md-checkbox {
     &.md-checked {
       .md-checkbox-container {
@@ -69,6 +81,9 @@ export default {
 }
 .tv_shows {
   color: $tv-shows;
+  a {
+    color: $tv-shows;
+  }
   .md-checkbox {
     &.md-checked {
       .md-checkbox-container {
@@ -85,6 +100,9 @@ export default {
 }
 .music {
   color: $music;
+  a {
+    color: $music;
+  }
   .md-checkbox {
     &.md-checked {
       .md-checkbox-container {
@@ -101,6 +119,9 @@ export default {
 }
 .bars_restaurants {
   color: $bars-restaurants;
+  a {
+    color: $bars-restaurants;
+  }
   .md-checkbox {
     &.md-checked {
       .md-checkbox-container {
@@ -117,6 +138,9 @@ export default {
 }
 .art {
   color: $art;
+  a {
+    color: $art;
+  }
   .md-checkbox {
     &.md-checked {
       .md-checkbox-container {

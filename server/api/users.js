@@ -70,7 +70,7 @@ router.get('/:userId/items', sameUser, async (req, res, next) => {
       where: { userId },
       include: [
         { model: Category, attributes: ['slug', 'isDefault', 'color', 'icon'] },
-        { model: Location },
+        // { model: Location },
       ],
       order: [['isCompleted', 'DESC']],
     });

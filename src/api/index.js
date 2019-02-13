@@ -2,12 +2,10 @@
 import axios from 'axios';
 
 const PORT = process.env.PORT || 8080;
-// const baseURL =
-//   process.env.NODE_ENV === 'production'
-//     ? 'http://queued-in.herokuapp.com'
-//     : `http://localhost:${PORT}`;
-
-const baseURL = `http://localhost:5000`;
+const baseURL =
+  process.env.NODE_ENV === 'production'
+    ? 'http://queued-in.herokuapp.com'
+    : `http://localhost:${PORT}`;
 
 const client = axios.create({
   // this will be proxied to the backend server at 8081
