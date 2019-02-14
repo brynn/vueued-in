@@ -31,14 +31,7 @@ export default {
   computed: {
     ...mapState({
       user: state => state.users.loggedInUser,
-      items: state => state.items.all,
     }),
-  },
-  created() {
-    // this.$store.dispatch('users/login', {
-    //   email: 'brynn.shepherd@gmail.com',
-    //   password: '123',
-    // });
   },
 };
 </script>

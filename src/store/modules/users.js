@@ -4,8 +4,6 @@ import users from '../../api/users';
 // initial state
 const state = {
   // state.users.loggedInUser
-  // TODO: stop hardcoding this
-  // loggedInUser: { id: 1 },
   loggedInUser: {},
 };
 
