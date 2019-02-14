@@ -302,6 +302,9 @@ export default {
 
 <style lang="scss">
 #add-item-form {
+  h2 {
+    color: #fff;
+  }
   .md-field {
     &:after {
       background-color: $default-text;

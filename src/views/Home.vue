@@ -172,4 +172,23 @@ export default {
     color: $art;
   }
 }
+.custom {
+  color: $default-text;
+  a {
+    color: $default-text;
+  }
+  .md-checkbox {
+    &.md-checked {
+      .md-checkbox-container {
+        background-color: $default-text;
+      }
+    }
+    .md-checkbox-container {
+      border-color: $default-text;
+    }
+  }
+  .md-icon {
+    color: $default-text;
+  }
+}
 </style>
