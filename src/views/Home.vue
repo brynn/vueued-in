@@ -39,6 +39,12 @@ export default {
 </script>
 
 <style lang="scss">
+.md-card {
+  background-color: $card-bg;
+  .md-card-header {
+    padding: 32px;
+  }
+}
 .md-checkbox {
   .md-checkbox-container {
     height: 24px;

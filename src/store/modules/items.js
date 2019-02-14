@@ -13,6 +13,11 @@ const getters = {
   getCompletedItems: state => {
     return state.all.filter(itemObj => itemObj.isCompleted);
   },
+  getCompletedItemsIds: state => {
+    return state.all
+      .filter(itemObj => itemObj.isCompleted)
+      .map(itemObj => itemObj.item.id);
+  },
   getUncompletedItems: state => {
     return state.all.filter(itemObj => !itemObj.isCompleted);
   },

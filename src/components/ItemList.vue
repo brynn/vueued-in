@@ -10,7 +10,7 @@
         >Hide Completed Items</md-switch>
       </md-card-header>
       <md-card-content>
-        <md-list id="item-list" v-if="visibleItems.length">
+        <md-list v-if="visibleItems.length">
           <div v-for="itemObj in items" :key="itemObj.item.id" v-show="!itemObj.isFiltered">
             <md-list-item
               v-show="hideCompleted ? !itemObj.isCompleted : true"
@@ -69,14 +69,8 @@ export default {
     ...mapGetters({
       visibleItems: 'items/getVisibleItems',
       selectedCategoryIds: 'categories/getSelectedCategoryIds',
+      completedItemIds: 'items/getCompletedItemIds',
     }),
-    // will be an array of ids e.g. [2, 6, 11]
-    completedItemIds: function() {
-      const completedItems = this.items.filter(itemObj => itemObj.isCompleted);
-      return completedItems.length > 0
-        ? completedItems.map(itemObj => itemObj.item.id)
-        : [];
-    },
   },
   methods: {
     handleCheck(itemId) {
@@ -113,10 +107,11 @@ export default {
 
 <style scoped lang="scss">
 #item-list {
-  font-family: 'Roboto Mono', monospace;
   .md-card {
-    background-color: $card-bg;
     margin-bottom: 20px;
+    .md-list {
+      font-family: 'Roboto Mono', monospace;
+    }
   }
   small {
     &.item-notes {

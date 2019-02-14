@@ -107,12 +107,6 @@ export default {
 
 <style scoped lang="scss">
 #category-filters {
-  .md-card {
-    background-color: $card-bg;
-    .md-card-header {
-      padding: 32px;
-    }
-  }
   .md-list-item-container {
     font-weight: 500;
     font-size: 20px;
