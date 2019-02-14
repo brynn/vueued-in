@@ -95,10 +95,11 @@ const mutations = {
     const index = itemIndex(itemId);
     state.all[index].isCompleted = !state.all[index].isCompleted;
   },
-  clearItem(itemId) {
+  clearItem(state, itemId) {
     const index = itemIndex(itemId);
-    state.all.splice(index);
+    state.all.splice(index, 1);
   },
+  // TODO: whyyy is this in the store?!
   toggleDeleteIcon(state, itemId) {
     const index = itemIndex(itemId);
     state.all[index].showDeleteIcon = !state.all[index].showDeleteIcon;
