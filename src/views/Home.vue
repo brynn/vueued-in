@@ -35,10 +35,10 @@ export default {
     }),
   },
   created() {
-    this.$store.dispatch('users/login', {
-      email: 'brynn.shepherd@gmail.com',
-      password: '123',
-    });
+    // this.$store.dispatch('users/login', {
+    //   email: 'brynn.shepherd@gmail.com',
+    //   password: '123',
+    // });
   },
 };
 </script>
