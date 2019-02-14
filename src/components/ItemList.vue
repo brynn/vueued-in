@@ -108,7 +108,7 @@ export default {
 <style scoped lang="scss">
 #item-list {
   .md-card {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     .md-list {
       font-family: 'Roboto Mono', monospace;
     }

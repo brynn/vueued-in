@@ -37,9 +37,37 @@ a {
 }
 button {
   color: $default-text;
+  &.md-primary {
+    color: #fff;
+    background-color: $music;
+  }
 }
 ul {
   list-style-type: none;
   padding: 0;
+}
+.md-switch {
+  .md-switch-container {
+    background-color: #051620;
+    .md-switch-thumb {
+      background-color: #fff;
+    }
+  }
+  &.md-checked {
+    .md-switch-thumb {
+      background-color: $art;
+    }
+  }
+}
+
+.md-radio {
+  &.md-checked {
+    .md-radio-container {
+      border-color: #fff;
+      &:after {
+        background-color: #fff;
+      }
+    }
+  }
 }
 </style>

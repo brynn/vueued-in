@@ -44,6 +44,9 @@ export default {
   .md-card-header {
     padding: 32px;
   }
+  .md-card-actions {
+    padding: 32px;
+  }
 }
 .md-checkbox {
   .md-checkbox-container {

@@ -20,18 +20,22 @@ export default {
   },
   // POST /api/users/:userId/items, req.body = item
   async postItem({ userId, item }, callback) {
-    const newItemFromServer = await api.execute(
-      'post',
-      `/api/users/${userId}/items`,
-      item
-    );
-    const newItem = {
-      item: newItemFromServer,
-      isFiltered: false,
-      isCompleted: newItemFromServer.isCompleted,
-      showDeleteIcon: false,
-    };
-    return callback(newItem);
+    try {
+      const newItemFromServer = await api.execute(
+        'post',
+        `/api/users/${userId}/items`,
+        item
+      );
+      const newItem = {
+        item: newItemFromServer,
+        isFiltered: false,
+        isCompleted: newItemFromServer.isCompleted,
+        showDeleteIcon: false,
+      };
+      return callback(newItem);
+    } catch (err) {
+      console.error(err);
+    }
   },
   // PUT /api/users/:userId/items/:itemId?checking=true
   async putItemComplete({ userId, itemId }, callback) {

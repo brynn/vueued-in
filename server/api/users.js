@@ -101,11 +101,13 @@ router.get('/:userId/items', sameUser, async (req, res, next) => {
 
 // POST a new item: /api/users/:userId/items
 router.post('/:userId/items', sameUser, async (req, res, next) => {
+  console.log('REQ BODY: ', req.body);
   try {
     const name = req.body.name;
     const categoryId = Number(req.body.categoryId);
     const userId = Number(req.params.userId);
-    const locationId = Number(req.body.locationId);
+    const locationId =
+      req.body.locationId === 0 ? Number(req.body.locationId) : null;
     const link = req.body.link;
     const notes = req.body.notes;
     const description = req.body.description;
