@@ -1,15 +1,19 @@
 <template>
-  <div class="home md-layout md-gutter">
-    <CategoryFilters class="md-layout-item md-size-30"/>
-    <div class="md-layout-item md-size-70">
-      <ItemList/>
-      <AddItemForm/>
+  <div>
+    <Nav/>
+    <div class="home md-layout md-gutter">
+      <CategoryFilters class="md-layout-item md-size-30"/>
+      <div class="md-layout-item md-size-70">
+        <ItemList/>
+        <AddItemForm/>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
+import Nav from '@/components/Nav.vue';
 import CategoryFilters from '@/components/CategoryFilters.vue';
 import ItemList from '@/components/ItemList.vue';
 import AddItemForm from '@/components/AddItemForm.vue';
@@ -19,6 +23,7 @@ import { mapState } from 'vuex';
 export default {
   name: 'home',
   components: {
+    Nav,
     CategoryFilters,
     ItemList,
     AddItemForm,
@@ -39,15 +44,6 @@ export default {
 </script>
 
 <style lang="scss">
-.md-card {
-  background-color: $card-bg;
-  .md-card-header {
-    padding: 32px;
-  }
-  .md-card-actions {
-    padding: 32px;
-  }
-}
 .md-checkbox {
   .md-checkbox-container {
     height: 24px;

@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <Nav/>
     <!-- <div id="nav">
       <router-link to="/">Home</router-link>|
       <router-link to="/about">About</router-link>
@@ -10,13 +9,8 @@
 </template>
 
 <script>
-import Nav from '@/components/Nav.vue';
-
 export default {
   name: 'App',
-  components: {
-    Nav,
-  },
 };
 </script>
 
@@ -45,6 +39,48 @@ button {
 ul {
   list-style-type: none;
   padding: 0;
+}
+
+.md-card {
+  background-color: $card-bg;
+  .md-card-header {
+    padding: 32px;
+  }
+  .md-card-actions {
+    padding: 32px;
+  }
+}
+
+.md-field {
+  &:after {
+    background-color: $default-text;
+  }
+  &.md-has-textarea {
+    background-color: #082231;
+  }
+  &.md-disabled {
+    opacity: 0.5;
+  }
+  .md-input,
+  .md-textarea {
+    color: #fff;
+  }
+  svg {
+    fill: $default-text;
+  }
+}
+.item-tooltip {
+  font-size: 14px;
+  background-color: #082231;
+  color: #fff;
+}
+.md-select-menu {
+  .md-list {
+    background-color: #fff;
+  }
+}
+.md-datepicker-dialog {
+  background-color: #fff;
 }
 .md-switch {
   .md-switch-container {

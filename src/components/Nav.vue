@@ -14,9 +14,9 @@
       </h3>
     </div>
     <div class="md-layout-item md-size-30">
-      <md-button>Map</md-button>
+      <!-- <md-button>Map</md-button>
       <md-button>Calendar</md-button>
-      <md-button @click="handleLogOut">Log Out</md-button>
+      <md-button @click="handleLogOut">Log Out</md-button>-->
     </div>
   </nav>
 </template>
