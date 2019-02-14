@@ -3,11 +3,11 @@
 /* eslint-disable no-console */
 const path = require('path');
 const express = require('express');
-const morgan = require('morgan');
-const compression = require('compression');
 const session = require('express-session');
 const passport = require('passport');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const morgan = require('morgan');
+const compression = require('compression');
 var cors = require('cors');
 
 const db = require('./db');
@@ -30,7 +30,9 @@ if (process.env.NODE_ENV === 'testing') {
  * keys as environment variables, so that they can still be read by the
  * Node process on process.env
  */
-if (process.env.NODE_ENV !== 'production') require('../secrets');
+if (process.env.NODE_ENV !== 'production') {
+  require('../secrets');
+}
 
 // passport registration
 passport.serializeUser((user, done) => done(null, user.id));
@@ -45,8 +47,9 @@ passport.deserializeUser(async (id, done) => {
 });
 
 const createApp = () => {
-  // logging middleware
+  // logging & compression middleware
   app.use(morgan('dev'));
+  app.use(compression());
 
   // cors (cross origin resource sharing)
   app.use(cors());
@@ -65,9 +68,6 @@ const createApp = () => {
   // body parsing middleware
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
-
-  // compression middleware
-  app.use(compression());
 
   // session middleware with passport
   app.use(
